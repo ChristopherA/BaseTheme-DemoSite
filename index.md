@@ -13,7 +13,7 @@ title: Home
 
 ## Pages
 
-{% include page_hierarchy.html %}
+{% include page_heirarchy.html %}
 
 ## Posts
 

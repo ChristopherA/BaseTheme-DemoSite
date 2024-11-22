@@ -2,7 +2,7 @@ title: "My Site"
 description: "A site built using BaseTheme."
 url: "https://ChristopherA.github.io" # The root of your GitHub Pages site
 baseurl: "/BaseTheme-SiteDemo" # The repository's name for subdirectory hosting
-remote_theme: "ChristopherA/BaseTheme" # The GitHub repo for the theme
+remote_theme: "ChristopherA/BaseTheme@main" # The GitHub repo for the theme
 plugins:
   - jekyll-remote-theme # Ensures the remote theme works
 markdown: kramdown

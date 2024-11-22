@@ -7,8 +7,6 @@ title: Home
 
 {{ site.description }}
 
-[About {{ site.title }}](/about/)
-
 ---
 
 ## Pages
@@ -17,11 +15,4 @@ title: Home
 
 ## Posts
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <small>— {{ post.date | date: site.date_format | default: "%B %d, %Y" }}</small>
-    </li>
-  {% endfor %}
-</ul>
+{% include post_list.html %}

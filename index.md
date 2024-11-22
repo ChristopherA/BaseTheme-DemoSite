@@ -11,7 +11,11 @@ title: Home
 
 ---
 
-## Recent Posts
+## Pages
+
+{% include page_hierarchy.html %}
+
+## Posts
 
 <ul>
   {% for post in site.posts %}

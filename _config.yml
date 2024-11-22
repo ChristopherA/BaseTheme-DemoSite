@@ -6,3 +6,6 @@ remote_theme: "ChristopherA/BaseTheme@main" # The GitHub repo for the theme
 plugins:
   - jekyll-remote-theme # Ensures the remote theme works
 markdown: kramdown
+collections:
+  pages:
+    output: true

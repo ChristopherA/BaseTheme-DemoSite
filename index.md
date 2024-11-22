@@ -7,7 +7,7 @@ title: Home
 
 {{ site.description }}
 
-[About {{ site.title }}](/about.html)
+[About {{ site.title }}](/about/)
 
 ---
 

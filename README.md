@@ -97,15 +97,14 @@ Common optional front matter:
 ```yaml
 ---
 description: "SEO description"  # Optional: recommended for SEO
-permalink: /custom-url/         # Optional: custom URL path, otherwise the file name
+permalink: /custom-url/         # Optional: custom URL path
 title: "Override Title"         # Optional: Only needed if different from first H1
 ---
 ```
 For both web pages and posts:
-- At least one markdown header  in the page content required unless you add a `title:` to the front matter.
+- At least one markdown header in the page content required unless you add a `title:` to the front matter.
 
-
-## Creating Content`#`
+## Creating Content
 
 ### Static Pages (Optional)
 Create pages in `_pages/` (remove directory if only using home page):

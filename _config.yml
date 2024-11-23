@@ -1,7 +1,15 @@
 # Theme Settings
 remote_theme: "ChristopherA/BaseTheme@main"
 plugins:
-  - jekyll-remote-theme  # Required for remote theme
+  - jekyll-remote-theme # Required
+  - jekyll-seo-tag      # Required by BaseTheme
+  - jekyll-feed         # Optional enhancement
+  - jekyll-sitemap      # Optional enhancement
+  - jekyll-paginate     # Optional pagination
+
+# Pagination Settings
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 # Site Settings
 title: "Demo Site"

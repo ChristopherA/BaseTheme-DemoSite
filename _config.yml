@@ -1,32 +1,67 @@
+# DemoSite Configuration
+# Demonstrates BaseTheme usage with both static pages and blog posts
+
 # Theme Settings
 remote_theme: "ChristopherA/BaseTheme@main"
+
+# REQUIRED: Site Settings 
+# >>> CHANGE THESE TO YOUR OWN VALUES <<<
+title: "Demo Site"                        # Change to your website's title
+description: "A site built using BaseTheme." # Change to your site's description
+url: "https://ChristopherA.github.io"     # Change to your own github.io URL
+baseurl: "/BaseTheme-DemoSite"           # Change to your repository name, or "" if hosting at root
+
+# OPTIONAL: SEO Enhancements (jekyll-seo-tag)
+# >>> CHANGE THESE TO YOUR OWN SOCIAL MEDIA, OR REMOVE IF NOT NEEDED <<<
+twitter:
+  username: ChristopherA                  # Change to your Twitter username, or remove section if unused
+  card: summary                          
+
+social:
+  name: Christopher Allen                # Change to your name
+  links:                                # Change to your own social media URLs, or remove unused ones
+    - https://bsky.app/profile/christophera.bsky.social
+    - https://github.com/ChristopherA
+    - https://twitter.com/ChristopherA
+    - https://www.linkedin.com/in/ChristopherA
+
+# Required and Optional Plugins
 plugins:
-  - jekyll-remote-theme # Required
-  - jekyll-seo-tag      # Required by BaseTheme
-  - jekyll-feed         # Optional enhancement
-  - jekyll-sitemap      # Optional enhancement
-  - jekyll-paginate     # Optional pagination
+  # Core functionality (inherited from BaseTheme)
+  - jekyll-remote-theme                  # Required - do not remove
+  - jekyll-seo-tag                      # Required - do not remove
+  - jekyll-sitemap                      # Required - do not remove
+  
+  # OPTIONAL: Quality of life improvements
+  # >>> REMOVE THESE IF NOT NEEDED <<<
+  - jekyll-titles-from-headings         # Optional - removes need for title in front matter
+  - jekyll-default-layout              # Optional - removes need for layout in front matter
+  
+  # OPTIONAL: Blog-specific features
+  # >>> REMOVE THIS SECTION IF NOT USING BLOG POSTS <<<
+  - jekyll-feed                        # Optional - generates RSS feed for blog posts
 
-# Pagination Settings
-paginate: 5
-paginate_path: "/blog/page:num/"
-
-# Site Settings
-title: "Demo Site"
-description: "A site built using BaseTheme."
-url: "https://ChristopherA.github.io"
-baseurl: "/BaseTheme-DemoSite"
-
-# Optional Settings
+# REQUIRED: Navigation
+# >>> CHANGE THESE TO YOUR OWN PAGES <<<
 navigation:
   - title: Home
     url: /
-  - title: About
+  - title: About                        # Remove if not using
     url: /about/
-date_format: "%B %d, %Y"
+  - title: Blog                         # Remove if not using blog
+    url: /blog/
+
+# Format Settings
+date_format: "%B %d, %Y"                # How dates appear (e.g., November 22, 2024)
 
 # Jekyll Settings
-markdown: kramdown
-collections:
-  pages:
-    output: true
+markdown: kramdown                      
+collections:                           
+  pages:                              
+    output: true                     
+
+# OPTIONAL: Feed Settings
+# >>> REMOVE THIS SECTION IF NOT USING BLOG POSTS <<<
+feed:
+  path: feed.xml                       
+  posts_limit: 20

@@ -1,141 +1,116 @@
 # BaseTheme-DemoSite
 
-A demonstration site showing how to use BaseTheme - a minimal Jekyll remote theme - for GitHub Pages. This demo includes both simple web pages and blog posts, plus examples of useful optional features you can add to your site.
+A demonstration site showing how to use [BaseTheme](https://github.com/ChristopherA/BaseTheme) - a minimal Jekyll remote theme for GitHub Pages. This demo includes both simple web pages and blog posts.
+
+## Features
+
+### Core Features (Always Included)
+- 🪶 Minimal, no-bloat foundation
+- 🔍 SEO-friendly metadata
+- 🗺️ Search engine sitemap
+- 📱 Mobile-first responsive design
+- ♿️ Accessibility built-in
+- 🌙 Dark mode support
+- 🖨️ Print-friendly styles
+- 🚫 No JavaScript required
+- 🎨 Easy to customize
+
+### Optional Features (Remove If Not Needed)
+- 📝 Automatic page layouts (reduces front matter boilerplate)
+- 📖 Automatic page titles from headings
+- 📑 Multiple page support with navigation
+- ✍️ Blog post support
+- 📰 RSS feed for blog posts
 
 ## See It In Action
+- View the [live demo](https://christophera.github.io/BaseTheme-DemoSite/)
+- See [BaseTheme](https://github.com/ChristopherA/BaseTheme) for core features
+- Full template files in this repository
 
-View this template live: [Demo Site](https://christophera.github.io/BaseTheme-DemoSite/)
+## Quick Start
 
-For a minimal implementation without these additional features, see the [BaseTheme README](https://github.com/ChristopherA/BaseTheme).
-
-## License
-
-This demo site is released under [CC0](LICENSE) ("No Rights Reserved"). You can copy, modify, distribute and use the site content and configuration without attribution or permission.
-
-## Author
-
-Created by Christopher Allen ([GitHub @ChristopherA](https://github.com/ChristopherA) | ChristopherA@LifeWithAlacrity.com)
-
-## Usage
-
-### Basic Setup
-
-1. Use the GitHub "Use this template" button to create your own repository, or manually copy these files to a new repository.
-
-2. Add basic configuration to `_config.yml`:
+1. Use GitHub's "Use this template" button to create your repository
+2. Edit `_config.yml`:
     ```yaml
     # Theme Settings
     remote_theme: "ChristopherA/BaseTheme@main"
+    
+    # Core Plugins (from BaseTheme - do not remove these)
     plugins:
-      - jekyll-remote-theme  # Required
+      - jekyll-remote-theme    # Required for remote themes
+      - jekyll-seo-tag        # Required for SEO meta tags
+      - jekyll-sitemap        # Required for search engines
 
+    # Optional Plugins (remove these if you don't use them)
+      - jekyll-default-layout     # Optional - removes need for layout in front matter
+      - jekyll-titles-from-headings  # Optional - removes need for title in front matter
+    
+    # Blog Features (remove this section if not using blog posts)
+      - jekyll-feed  # Optional - adds RSS feed for blog posts
+    
     # Site Settings
     title: "Your Site Title"
     description: "Your site description"
     url: "https://yourusername.github.io"
     baseurl: "/your-repo-name"  # Leave empty if hosting at root URL
-    ```
-
-3. Deploy to GitHub Pages:
-   - Push your changes to your repository
-   - Enable GitHub Pages in your repository settings
-
-### Content Creation
-
-Create your site content:
-
-- Modify `index.md` for your home page
-- Create pages in `_pages/` directory with front matter:
-    ```yaml
-    ---
-    layout: default
-    title: "Page Title"
-    description: "A brief description of this page"  # Optional but good for SEO
-    permalink: /about/
-    ---
-    ```
-- Add posts in `_posts/` directory with front matter 
-    ```yaml
-    ---
-    layout: post
-    title: "A Post"
-    description: "Welcome!"  # Optional but good for SEO
-    date: 2024-11-21
-    ---
-    ```
-- NOTE: These `description` fields are optional but recommended for better search engine visibility.
-
-### Features Beyond BaseTheme
-
-This demo also shows how to enhance BaseTheme's minimal foundation with useful, low-overhead features. Each requires explicit inclusion in your `_config.yaml`. If you don't need them, you can remove them:
-
-#### Enhanced Content Discovery
-
-1. **RSS Feed** (`jekyll-feed`)
-   - Automatically generates an RSS/Atom feed at `/feed.xml`
-   - Great for allowing readers to subscribe to your posts
-   - No additional configuration needed
-    ```yaml
-    plugins:
-      - jekyll-feed
-    ```
-
-2. **SEO Tags** (`jekyll-seo-tag`)
-   - Adds meta tags for search engines and social networks
-   - Uses your `title`, `description`, and post metadata
-   - No additional configuration needed
-    ```yaml
-    plugins:
-      - jekyll-seo-tag
-    ```
-
-3. **Sitemap** (`jekyll-sitemap`)
-   - Creates `sitemap.xml` for search engines
-   - Automatically includes all your pages and posts
-   - No additional configuration needed
-    ```yaml
-    plugins:
-      - jekyll-sitemap
-    ```
-
-#### Content Organization
-
-1. **Pagination** (`jekyll-paginate`)
-   - Splits your post listing into pages
-   - Recommended when you have more than ~10 posts
-   - Requires additional configuration:
-    ```yaml
-    plugins:
-      - jekyll-paginate
-    paginate: 5  # Posts per page
-    paginate_path: "/blog/page:num/"
-    ```
-
-2. **Navigation**
-   - Customize the site menu structure
-    ```yaml
+    
+    # Navigation (remove pages you don't use)
     navigation:
       - title: Home
         url: /
-      - title: About
+      - title: About    # Remove if not using About page
         url: /about/
-      - title: Blog
+      - title: Blog     # Remove if not using blog
         url: /blog/
-    ```
 
-3. **Collections**
-   - Organize related content (like pages) together
-    ```yaml
-    collections:
-      pages:
-        output: true
+    # Blog Settings (remove if not using blog posts)
+    feed:
+      path: feed.xml
+      posts_limit: 20
     ```
+3. Enable GitHub Pages in your repository settings
 
-#### Date Formatting
+## File Structure
+```
+.
+├── _config.yml          # Site configuration
+├── _pages/             # Static pages (optional)
+│   └── about.md        # Example page (remove if not using)
+├── _posts/             # Blog posts (remove if not using blog)
+│   └── YYYY-MM-DD-*.md # Post files
+└── index.md            # Home page
+```
 
-Customize how dates appear throughout your site:
-    ```yaml
-    date_format: "%B %d, %Y"  # November 22, 2024
-    # or
-    date_format: "%Y-%m-%d"   # 2024-11-22
-    ```
+## Creating Content
+
+### Static Pages (Optional)
+Create pages in `_pages/` (remove directory if only using home page):
+```yaml
+---
+layout: default
+title: "About"
+description: "About this site"  # Optional but good for SEO
+permalink: /about/
+---
+Welcome to my site!
+```
+
+### Blog Posts (Optional)
+If you want a blog, add posts in `_posts/` (remove directory if not using blog):
+```yaml
+---
+layout: post
+title: "My First Post"
+description: "Introduction"  # Optional but good for SEO
+date: 2024-11-21
+---
+Hello world!
+```
+
+## License
+
+Released under [CC0](LICENSE) ("No Rights Reserved"). Use freely without attribution.
+
+## Author
+
+Created by Christopher Allen ([GitHub @ChristopherA](https://github.com/ChristopherA))

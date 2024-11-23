@@ -1,8 +1,8 @@
 # BaseTheme-DemoSite
 
-This is a demonstration and template site built using [BaseTheme](https://github.com/ChristopherA/BaseTheme). While BaseTheme provides an essential, lean foundation for static sites on GitHub Pages, this DemoSite shows how to build upon that foundation, illustrating both basic usage and optional features like blog posts.
+This is a demonstration and template site built using [BaseTheme](https://github.com/ChristopherA/BaseTheme). While BaseTheme provides a lean foundation for static sites on GitHub Pages, this DemoSite shows how to build upon that foundation, illustrating both basic usage for web pages and optional features such as blog posts.
 
-Think of BaseTheme as your starting point - the essential building blocks. This DemoSite shows you how to put those blocks together into a complete website.
+Think of BaseTheme as your starting point - a foundational building block. This DemoSite shows you how to add additional blocks together for a complete lean website.
 
 ## Features
 

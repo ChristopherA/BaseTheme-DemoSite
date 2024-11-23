@@ -1,10 +1,9 @@
 ---
 layout: default
-title: About
 description: "About this Site"
 permalink: /about/
 ---
 
-# {{ site.title }}:{{ site.description }}
+# About
 
-This site is built using the BaseTheme remote theme.
+A demonstration site showing how to use [BaseTheme](https://github.com/ChristopherA/BaseTheme) - a minimal Jekyll remote theme for GitHub Pages. This demo includes both simple web pages and blog posts.

@@ -20,13 +20,7 @@ Think of BaseTheme as your starting point - a foundational building block. This 
 
 ## Recent Posts
 
-{% for post in site.posts limit:3 %}
-- <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: site.date_format | default: "%B %d, %Y" }}</time> [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
-
-{% if site.posts.size > 3 %}
-[View all posts]({{ '/blog/' | relative_url }})
-{% endif %}
+{% include post_list.html limit=3 %}
 
 ## Pages
 

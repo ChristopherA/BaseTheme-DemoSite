@@ -5,7 +5,8 @@ description: "All blog posts"
 ---
 # Blog Posts
 
-{% for post in site.posts %}
+{% assign posts = site.posts %}
+{% for post in posts %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: site.date_format | default: "%B %d, %Y" }}</time>

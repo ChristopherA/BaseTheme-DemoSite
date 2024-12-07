@@ -1,5 +1,4 @@
 ---
-layout: default
 permalink: /blog/
 description: "All blog posts"
 ---

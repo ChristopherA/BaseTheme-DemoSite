@@ -31,11 +31,8 @@ plugins:
   - jekyll-remote-theme               # Required - do not remove
   - jekyll-seo-tag                    # Required - do not remove
   - jekyll-sitemap                    # Required - do not remove
-  
-  # OPTIONAL: Quality of life improvements
-  # >>> REMOVE THESE IF NOT NEEDED <<<
-  - jekyll-default-layout             # Optional - removes need for layout in front matter
-  - jekyll-titles-from-headings       # Optional - removes need for title in front matter
+  - jekyll-titles-from-headings       # Required - do not remove
+  - jekyll-default-layout            # Required - do not remove
 
   # OPTIONAL: Blog-specific features
   # >>> REMOVE THIS SECTION IF NOT USING BLOG POSTS <<<
@@ -46,6 +43,7 @@ plugins:
 titles_from_headings:
   enabled: true               # Enables the jekyll-titles-from-headings plugin
   strip_title: true           # Removes the first H1 (`# `) tile from content to use use in page.title in layout
+  strip_spans: true           # Removes span tags from titles
   collections: true           # Enables this plugin for collections
 
 # REQUIRED: Navigation

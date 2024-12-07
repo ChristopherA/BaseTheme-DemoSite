@@ -6,23 +6,21 @@ Think of BaseTheme as your starting point - a foundational building block. This 
 
 ## Features
 
-### Core Features (From BaseTheme)
-- 🪶 Minimal, no-bloat foundation
-- 🔍 SEO-friendly metadata
-- 🗺️ Search engine sitemap
-- 📱 Mobile-first responsive design
-- ♿️ Accessibility built-in
-- 🌙 Dark mode support
-- 🖨️ Print-friendly styles
-- 🚫 No JavaScript required
-- 🎨 Easy to customize
+- 🪶 Minimal, no-bloat foundation, no JavaScript required
+- ✍️ Write naturally - no YAML front matter needed
+  - 📄 Page titles from first heading
+  - 🎯 Automatic layout detection
+- 🎨 Flexible styling options
+  - 🌓 Dark mode support
+  - 🖨️ Print-friendly layouts
+- 🌐 Responsive and accessible by design
+  - 📱 Mobile-first approach  
+  - ♿️ WCAG compliance built-in
+- 🔍 SEO-ready with metadata and sitemaps
 
 ### Additional Features (Demonstrated Here)
-- 📝 Automatic page layouts (reduces front matter boilerplate)
-- 📖 Automatic page titles from headings
-- 📑 Multiple page support with navigation
-- ✍️ Blog post support
-- 📰 RSS feed for blog posts
+- 📑 Multi-page navigation
+- 📰 Blog post support with RSS feed
 
 ## See It In Action
 - View the [live demo](https://christophera.github.io/BaseTheme-DemoSite/)
@@ -32,134 +30,71 @@ Think of BaseTheme as your starting point - a foundational building block. This 
 ## Quick Start
 
 1. Use GitHub's "Use this template" button to create your repository
-2. Edit `_config.yml`:
-    ```yaml
-    # Theme Settings
-    remote_theme: "ChristopherA/BaseTheme@main"
-    
-    # Core Plugins (from BaseTheme - do not remove these)
-    plugins:
-      - jekyll-remote-theme    # Required for remote themes
-      - jekyll-seo-tag        # Required for SEO meta tags
-      - jekyll-sitemap        # Required for search engines
-
-    # Optional Plugins (remove these if you don't use them)
-      - jekyll-titles-from-headings  # Optional - auto-detects titles from content
-      - jekyll-default-layout     # Optional - removes need for layout in front matter
-    
-    # Blog Features (remove this section if not using blog posts)
-      - jekyll-feed  # Optional - adds RSS feed for blog posts
-    
-    # Site Settings
-    title: "Your Site Title"
-    description: "Your site description"
-    url: "https://yourusername.github.io"
-    baseurl: "/your-repo-name"  # Leave empty if hosting at root URL
-    
-    # Navigation (remove pages you don't use)
-    navigation:
-      - title: Home
-        url: /
-      - title: About    # Remove if not using About page
-        url: /about/
-      - title: Blog     # Remove if not using blog
-        url: /blog/
-
-    # Blog Settings (remove if not using blog posts)
-    feed:
-      path: feed.xml
-      posts_limit: 20
-    ```
+2. Customize `_config.yml` - change the required settings to match your site, and delete any optional sections (like blog and social media) that you don't need:
 3. Enable GitHub Pages in your repository settings
 
 ## File Structure
 ```
 .
 ├── _config.yml          # Site configuration
-├── _pages/             # Static pages (optional)
-│   ├── about.md        # Example page (remove if not using)
-│   └── blog.md         # Blog index page (remove if not using blog)
-├── _posts/             # Blog posts (remove if not using blog)
+├── _pages/             # Static pages
+│   ├── about.md        # Example page
+│   └── blog.md         # Blog index page
+├── _posts/             # Blog posts
 │   └── YYYY-MM-DD-*.md # Post files
 └── index.md            # Home page
 ```
 
-## Front Matter Reference
-
-Required only for posts:
-```yaml
----
-date: YYYY-MM-DD   # Date required for blog posts
----
-```
-
-Common optional front matter:
-```yaml
----
-description: "SEO description"  # Optional: recommended for SEO
-permalink: /custom-url/         # Optional: custom URL path
-title: "Override Title"         # Optional: Only needed if different from first H1
----
-```
-For both web pages and posts:
-- At least one markdown header in the page content required unless you add a `title:` to the front matter.
-
 ## Creating Content
 
-### Static Pages (Optional)
-Create pages in `_pages/` (remove directory if only using home page):
-```yaml
----
-description: "About this site"  # Optional but good for SEO
-permalink: /about/            # Optional - defaults to filename-based path
----
-# About This Site
+### Static Pages
+Add markdown files to the `_pages` directory with a level-one heading (# Title). The heading becomes the page title, and the layout is chosen automatically. No front matter is needed.
 
-Welcome to my site!
+You can override any defaults by adding optional front matter:
+
+```markdown
+---
+# All of these are optional - only add what you need
+permalink: /custom-url/
+title: "TOPIC" # overrides getting title from first level-one heading (# Title) 
+description: "All about my topic"  # Shows in search results and social media
+---
+
+# All about my topic
+
+Everything you needed to know about my topic.
+
 ```
 
-### Blog Posts (Optional)
-If you want a blog, add posts in `_posts/` (remove directory if not using blog):
-```yaml
----
-description: "Introduction"  # Optional but good for SEO
-date: 2024-11-21           # Required for blog posts
----
-# My First Post
+### Blog Pages
+Add markdown files named YYYY-MM-DD-title.md to the `_posts` directory with a level-one heading (# Title). The heading becomes the post title, and the layout is chosen automatically. The only required front matter is the date:
 
-Hello world!
+```markdown
+---
+date: 2024-01-01  # Required for blog posts
+---
+
+# My First Blog Post
+
+Everything you wanted to know about my first post.
 ```
 
-Note: The layout will be automatically set based on the file location - posts get the 'post' layout, other pages get the 'default' layout.
+## Additional Details
 
-### Page and Post Titles
+### Page Types and Layouts
 
-Thanks to the `jekyll-titles-from-headings` plugin, you don't need to specify a title in your front matter. The title will be automatically taken from the first header `#` (H1) in your content. For example:
+Files automatically get the right layout based on their location:
+1. Files named `index.md` → `home` layout
+2. Posts in `_posts/` → `post` layout
+3. Other `.md` files → `page` layout
+4. `.html` files → `default` layout
 
+You can override any automatic layout by specifying it in front matter:
 ```yaml
 ---
-description: "About this site"  # Optional but good for SEO
-permalink: /about/
+layout: custom-layout
 ---
-# About This Site
-
-Welcome to my site!
 ```
-
-The title "About This Site" will be automatically used as the page title. Only add `title:` to your front matter if you want to override the H1 header, such as:
-
-```yaml
----
-title: "Different Title Than Header"  # This will override the H1 below
-description: "About this site"
-permalink: /about/
----
-# About This Site
-
-Welcome to my site!
-```
-
-In this case, "Different Title Than Header" will be used as the page title instead of "About This Site".
 
 ### Page URLs (Permalinks)
 
@@ -172,8 +107,8 @@ For pages in the `_pages` directory:
 Blog posts automatically get URLs based on their filename pattern:
 `_posts/YYYY-MM-DD-title.md` becomes `/YYYY/MM/DD/title/`
 
-### Blog Index Page (Optional)
-If using blog features, there is a `_pages/blog.md` that will list all posts (remove file if not using blog):
+### Blog Index Page
+If using blog features, the `_pages/blog.md` will list all posts:
 
 This will create a blog index page that:
 - Lists all posts chronologically (newest first)

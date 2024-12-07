@@ -1,7 +1,6 @@
 ---
-layout: default
-description: "About this Site"
 permalink: /about/
+description: "About this Site"
 ---
 
 # About

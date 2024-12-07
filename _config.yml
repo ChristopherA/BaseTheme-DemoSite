@@ -31,22 +31,12 @@ plugins:
   - jekyll-remote-theme               # Required - do not remove
   - jekyll-seo-tag                    # Required - do not remove
   - jekyll-sitemap                    # Required - do not remove
-  
-  # OPTIONAL: Quality of life improvements
-  # >>> REMOVE THESE IF NOT NEEDED <<<
-  - jekyll-default-layout             # Optional - removes need for layout in front matter
-  - jekyll-titles-from-headings       # Optional - removes need for title in front matter
+  - jekyll-titles-from-headings       # Required - do not remove
+  - jekyll-default-layout            # Required - do not remove
 
   # OPTIONAL: Blog-specific features
   # >>> REMOVE THIS SECTION IF NOT USING BLOG POSTS <<<
   - jekyll-feed                       # Optional - generates RSS feed for blog posts
-
-# OPTIONAL: Plugin Configurations
-# >>> REMOVE THIS SECTION IF NOT USING jekyll-titles-from-headings <<<
-titles_from_headings:
-  enabled: true               # Enables the jekyll-titles-from-headings plugin
-  strip_title: true           # Removes the first H1 (`# `) tile from content to use use in page.title in layout
-  collections: true           # Enables this plugin for collections
 
 # REQUIRED: Navigation
 # >>> CHANGE THESE TO YOUR OWN PAGES <<<
@@ -61,11 +51,21 @@ navigation:
 # Format Settings
 date_format: "%B %d, %Y"                # How dates appear (e.g., November 22, 2024)
 
-# Jekyll Settings
+# Core Jekyll Settings
 markdown: kramdown                      
 collections:                           
   pages:                              
-    output: true                     
+    output: true
+
+# Plugin Settings
+titles_from_headings:
+  strip_spans: true      # Removes span tags from titles
+  strip_markdown: true   # Removes Markdown formatting from titles
+  strip_html: true       # Removes HTML tags from titles
+  strip_newlines: true   # Removes newlines from titles
+  strip_whitespace: true # Removes leading/trailing whitespace from titles
+  # lowercase: true        # Converts titles to lowercase
+  # separator: " | "       # Separator for title segments
 
 # OPTIONAL: Feed Settings
 # >>> REMOVE THIS SECTION IF NOT USING BLOG POSTS <<<
